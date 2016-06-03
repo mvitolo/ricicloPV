@@ -11,7 +11,7 @@ import SwiftyJSON
 
 class IAPSearchTableViewController: UITableViewController {
 
-    @IBOutlet var searchBar: UITableView!
+    @IBOutlet var searchBar: UISearchBar!
     
     var disposes : JSON!
     var wastes : JSON!
@@ -24,6 +24,7 @@ class IAPSearchTableViewController: UITableViewController {
         self.disposes = IAPEngine.sharedInstance.disposes
         self.wastes = IAPEngine.sharedInstance.wastes
         self.filtered = self.wastes.arrayValue
+        self.title = "Differenziata PV"
     }
 
     override func didReceiveMemoryWarning() {
