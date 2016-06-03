@@ -1,0 +1,78 @@
+{
+    "DisposeOptions":{
+        "DisposeOption":[
+                         {
+                         "Name":"GENERIC",
+                         "Description":"Indifferenziato",
+                         "Container":"Sacco semitrasparente grigio",
+                         "Procedure":"Indifferenziato"
+                         },
+                         {
+                         "Name":"PAPER",
+                         "Description":"Carta/Cartone",
+                         "Container":"Pacco/Confezione",
+                         "Procedure":"Carta/Cartone"
+                         },
+                         {
+                         "Name":"PLASTIC",
+                         "Description":"Plastica",
+                         "Container":"Sacco semitrasparente giallo",
+                         "Procedure":"Plastica"
+                         },
+                         {
+                         "Name":"HUMID",
+                         "Description":"Umido",
+                         "Container":"Eco Box Marrone",
+                         "Procedure":"Umido"
+                         },
+                         {
+                         "Name":"GLASS",
+                         "Description":"Vetro/Barattolame",
+                         "Container":"Eco Box Verde",
+                         "Procedure":"Vetro/Barattolame"
+                         },
+                         {
+                         "Name":"SPECIALIZED",
+                         "Description":"Rifiuti Speciali",
+                         "Container":"",
+                         "Procedure":"Contattare ditta specializzata"
+                         },
+                         {
+                         "Name":"CLOTHES",
+                         "Description":"Vestiti",
+                         "Container":"Contenitori stradali indumenti",
+                         "Procedure":"Contenitori stradali indumenti"
+                         },
+                         {
+                         "Name":"AUTHORIZED_DEALERS",
+                         "Description":"Rifiuti Speciali",
+                         "Container":"",
+                         "Procedure":"Contattare rivenditori o smaltitori autorizzati"
+                         },
+                         {
+                         "Name":"LARGE",
+                         "Description":"Ingombranti/RAEE",
+                         "Container":"",
+                         "Procedure":"Contattare ASM"
+                         },
+                         {  
+                         "Name":"LANDFILL",
+                         "Description":"Rifiuti Speciali",
+                         "Container":"",
+                         "Procedure":"Piattaforma Ecologica di Montebellino"
+                         },
+                         {  
+                         "Name":"BATTERIES",
+                         "Description":"Batterie",
+                         "Container":"Contenitori stradali batterie",
+                         "Procedure":"Contenitori stradali batterie"
+                         },
+                         {  
+                         "Name":"MEDICAL",
+                         "Description":"Rifiuti Speciali",
+                         "Container":"Contenitori stradali medicinali",
+                         "Procedure":"Contenitori stradali medicinali"
+                         }
+                         ]
+    }
+}
