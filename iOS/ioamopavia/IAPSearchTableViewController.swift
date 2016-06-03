@@ -46,13 +46,23 @@ class IAPSearchTableViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("IAPSearchCell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("IAPSearchCell", forIndexPath: indexPath) as! IAPSearchCell
 
-        cell.textLabel?.text = filtered[indexPath.row]["Name"].string
-        // Configure the cell...i
+        cell.waste?.text = filtered[indexPath.row]["Name"].string
+        let dispose = filtered[indexPath.row]["DisposeOptions"][0]["disposeOption"].string
+        
+        cell.dispose.text = IAPEngine.sharedInstance.getDisposeDescritpion(dispose!)
+        cell.wImage.image = IAPEngine.sharedInstance.getDisposeImage(dispose!)
+        
+        if indexPath.row%2 == 0 {
+            cell.backgroundColor = IAPEngine.sharedInstance.hexStringToUIColor("#daeddb")
+        } else {
+            cell.backgroundColor = UIColor.whiteColor()
+        }
+        
 
         return cell
-    }
+    }//daeddb
 
 }
 
@@ -82,6 +92,9 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
         })
         if(filtered.count == 0){
             searchActive = false;
+            if searchText == "" {
+                filtered = self.wastes.array
+            }
         } else {
             searchActive = true;
         }
