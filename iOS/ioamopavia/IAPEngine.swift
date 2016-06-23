@@ -44,14 +44,21 @@ class IAPEngine: NSObject {
         return nil
     }
     
-    func getDisposeDescritpion(disposeName: String) -> String {
-        
+    func getDisposeDescritpion(disposeNames: Array<String>) -> String {
+        var ret:String = ""
+        var counter = 0
         for dispose in disposes["DisposeOption"].array! {
-            if disposeName == dispose["Name"].string{
-                return dispose["Description"].string!
+            for choosenDispose in disposeNames {
+                if choosenDispose == dispose["Name"].string{
+                    if counter > 0 {
+                        ret = ret + ", "
+                    }
+                    ret = ret+dispose["Description"].string!
+                    counter = counter + 1
+                }
             }
         }
-        return ""
+        return ret
     }
     
     func getDisposeImage(disposeName:String) -> UIImage {

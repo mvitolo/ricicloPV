@@ -51,7 +51,9 @@ class IAPSearchTableViewController: UITableViewController {
         cell.waste?.text = filtered[indexPath.row]["Name"].string
         let dispose = filtered[indexPath.row]["DisposeOptions"][0]["disposeOption"].string
         
-        cell.dispose.text = IAPEngine.sharedInstance.getDisposeDescritpion(dispose!)
+        let disposeArray = dispose?.componentsSeparatedByString(", ")
+        
+        cell.dispose.text = IAPEngine.sharedInstance.getDisposeDescritpion(disposeArray!)
         cell.wImage.image = IAPEngine.sharedInstance.getDisposeImage(dispose!)
         
         if indexPath.row%2 == 0 {
@@ -77,6 +79,7 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false;
+        searchBar.resignFirstResponder()
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
