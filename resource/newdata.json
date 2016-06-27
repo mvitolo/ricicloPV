@@ -288,18 +288,18 @@
         ]
     },
     {
-        "Name": "APPARECCHIATURE ELETTRICHE ED ELETTRONICHE (asciugacapelli",
+        "Name": "APPARECCHIATURE ELETTRICHE ED ELETTRONICHE (asciugacapelli, aspirapolvere, tv, ecc)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " aspirapolvere"
+                "disposeOption": "LANDFILL"
             },
             {
-                "disposeOption": " computer"
+                "disposeOption": "LARGE"
             },
             {
-                "disposeOption": " tv"
+                "disposeOption": ""
             }
         ]
     },
@@ -773,7 +773,7 @@
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": "PLASTICA"
+                "disposeOption": "PLASTIC"
             },
             {
                 "disposeOption": ""
@@ -2175,18 +2175,18 @@
         ]
     },
     {
-        "Name": "FILTRI TE’",
+        "Name": "FILTRI TÉ, CAFFÉ, CAMOMILLA, TISANE",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " CAFFE’"
+                "disposeOption": "HUMID"
             },
             {
-                "disposeOption": " CAMOMILLA"
+                "disposeOption": ""
             },
             {
-                "disposeOption": " TISANE"
+                "disposeOption": ""
             }
         ]
     },
