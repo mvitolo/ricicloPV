@@ -72,6 +72,12 @@
                          "Description":"Rifiuti Speciali",
                          "Container":"Contenitori stradali medicinali",
                          "Procedure":"Contenitori stradali medicinali"
+                         },
+                         {
+                         "Name":"GREEN",
+                         "Description":"Rifiuti Vegetali",
+                         "Container":"",
+                         "Procedure":""
                          }
                          ]
     }
