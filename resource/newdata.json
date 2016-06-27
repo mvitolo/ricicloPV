@@ -368,18 +368,18 @@
         ]
     },
     {
-        "Name": "ATTACCAPANNI (ferro",
+        "Name": "ATTACCAPANNI (ferro, legno, plastica)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " legno"
-            },
-            {
-                "disposeOption": " plastica)"
-            },
-            {
                 "disposeOption": "LANDFILL"
+            },
+            {
+                "disposeOption": "LARGE"
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
@@ -464,18 +464,18 @@
         ]
     },
     {
-        "Name": "BARATTOLAME (vetro",
+        "Name": "BARATTOLAME (vetro, alluminio, banda stagnata)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " alluminio"
-            },
-            {
-                "disposeOption": " banda stagnata)"
+                "disposeOption": "GLASS"
             },
             {
                 "disposeOption": "GLASS"
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
@@ -752,34 +752,34 @@
         ]
     },
     {
-        "Name": "BORSE (pelle",
+        "Name": "BORSE (pelle, tela, cuoio)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " tela"
-            },
-            {
-                "disposeOption": " cuoio)"
-            },
-            {
                 "disposeOption": "CLOTHES"
+            },
+            {
+                "disposeOption": ""
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
     {
-        "Name": "BOTTIGLIE IN PLASTIC (vuote) es. acqua",
+        "Name": "BOTTIGLIE IN PLASTICA (vuote) es. acqua, bibite, alcool, candeggina, detersivi, ecc...",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " bibite"
+                "disposeOption": "PLASTICA"
             },
             {
-                "disposeOption": " alcool"
+                "disposeOption": ""
             },
             {
-                "disposeOption": " candeggina"
+                "disposeOption": ""
             }
         ]
     },
@@ -832,18 +832,18 @@
         ]
     },
     {
-        "Name": "BRIK (latte",
+        "Name": "BRIK (latte, succhi di frutta, tetrapak)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " succhi di frutta"
-            },
-            {
-                "disposeOption": " tetrapak)"
-            },
-            {
                 "disposeOption": "PAPER"
+            },
+            {
+                "disposeOption": ""
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
@@ -864,18 +864,18 @@
         ]
     },
     {
-        "Name": "BUSTE E INCARTI TIPO CELLOPHANE PER ALIMENTI (pasta",
+        "Name": "BUSTE E INCARTI TIPO CELLOPHANE PER ALIMENTI (pasta, riso, patatine, caramelle)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " riso"
+                "disposeOption": "PLASTIC"
             },
             {
-                "disposeOption": " patatine"
+                "disposeOption": ""
             },
             {
-                "disposeOption": " caramelle)"
+                "disposeOption": ""
             }
         ]
     },
@@ -896,15 +896,15 @@
         ]
     },
     {
-        "Name": "CAFFE’ (fondi",
+        "Name": "CAFFE’ (fondi, cialde in carta)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " cialde in carta)"
+                "disposeOption": "HUMID"
             },
             {
-                "disposeOption": "HUMID"
+                "disposeOption": ""
             },
             {
                 "disposeOption": ""
@@ -960,18 +960,18 @@
         ]
     },
     {
-        "Name": "CALZE E CALZINI (nylon",
+        "Name": "CALZE E CALZINI (nylon, lana, cotone)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " lana"
-            },
-            {
-                "disposeOption": " cotone)"
-            },
-            {
                 "disposeOption": "CLOTHES"
+            },
+            {
+                "disposeOption": ""
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
@@ -1088,15 +1088,15 @@
         ]
     },
     {
-        "Name": "CARTA ARGENTATA (uovo di Pasqua",
+        "Name": "CARTA ARGENTATA (uovo di Pasqua, caramelle)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " caramelle)"
+                "disposeOption": "GENERIC"
             },
             {
-                "disposeOption": "GENERIC"
+                "disposeOption": ""
             },
             {
                 "disposeOption": ""
@@ -1120,15 +1120,15 @@
         ]
     },
     {
-        "Name": "CARTA STAGNOLA (in alluminio",
+        "Name": "CARTA STAGNOLA (in alluminio, pulita)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " pulita)"
+                "disposeOption": "GLASS"
             },
             {
-                "disposeOption": "GLASS"
+                "disposeOption": ""
             },
             {
                 "disposeOption": ""
@@ -1232,18 +1232,18 @@
         ]
     },
     {
-        "Name": "CASCO MOTO",
+        "Name": "CASCO MOTO, MOTORINO, BICI",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " MOTORINO"
-            },
-            {
-                "disposeOption": " BICI"
-            },
-            {
                 "disposeOption": "LANDFILL"
+            },
+            {
+                "disposeOption": ""
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
@@ -1456,15 +1456,15 @@
         ]
     },
     {
-        "Name": "CIBO (avanzato",
+        "Name": "CIBO (avanzato, cotto e crudo)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " cotto e crudo)"
+                "disposeOption": "HUMID"
             },
             {
-                "disposeOption": "HUMID"
+                "disposeOption": ""
             },
             {
                 "disposeOption": ""
@@ -1488,18 +1488,17 @@
         ]
     },
     {
-        "Name": "CINTURE (plastica",
+ "Name": "CINTURE (plastica, stoffa, cuoio)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " stoffa"
-            },
-            {
-                "disposeOption": " cuoio)"
-            },
-            {
                 "disposeOption": "CLOTHES"
+            },            {
+                "disposeOption": ""
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
@@ -1600,15 +1599,15 @@
         ]
     },
     {
-        "Name": "CONTENITORI PER ALIMENTI (tonno",
+        "Name": "CONTENITORI PER ALIMENTI (tonno, conserva)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": "conserva)\""
+                "disposeOption": "GLASS"
             },
             {
-                "disposeOption": "GLASS"
+                "disposeOption": ""
             },
             {
                 "disposeOption": ""
@@ -1632,18 +1631,18 @@
         ]
     },
     {
-        "Name": "CORNICI IN PLASTIC",
+        "Name": "CORNICI IN PLASTICA, METALLO O LEGNO VERNICIATO",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
-            {
-                "disposeOption": " METALLO O LEGNO VERNICIATO"
-            },
             {
                 "disposeOption": "LANDFILL"
             },
             {
                 "disposeOption": "LARGE"
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
@@ -1712,15 +1711,15 @@
         ]
     },
     {
-        "Name": "CUSTODIE PER CD",
+        "Name": "CUSTODIE PER CD, MUSICASSETTE E VIDEOCASSETTE",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " MUSICASSETTE E VIDEOCASSETTE"
+                "disposeOption": "GENERIC"
             },
             {
-                "disposeOption": "GENERIC"
+                "disposeOption": ""
             },
             {
                 "disposeOption": ""
@@ -2544,18 +2543,18 @@
         ]
     },
     {
-        "Name": "GUSCI DI CROSTACEI E MOLLUSCHI (cozze",
+        "Name": "GUSCI DI CROSTACEI E MOLLUSCHI (cozze, vongole, ecc.)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": "vongole"
-            },
-            {
-                "disposeOption": "ecc.)"
-            },
-            {
                 "disposeOption": "HUMID"
+            },
+            {
+                "disposeOption": ""
+            },
+            {
+                "disposeOption": ""
             }
         ]
     },
@@ -2677,7 +2676,7 @@
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": "CONTATTARE DITTA SPECIALIZZATA"
+                "disposeOption": "SPECIALIZED"
             },
             {
                 "disposeOption": ""
@@ -2725,7 +2724,7 @@
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": "CONTENITORI STRADALI INDUMENTI"
+                "disposeOption": "CLOTHES"
             },
             {
                 "disposeOption": ""
@@ -2832,15 +2831,15 @@
         ]
     },
     {
-        "Name": "LATTINE VARIE PER ALIMENTI",
+        "Name": "LATTINE VARIE PER ALIMENTI, BEVANDE (alluminio e banda stagnata)",
         "Description": "",
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": " BEVANDE (alluminio e banda stagnata)"
+                "disposeOption": "GLASS"
             },
             {
-                "disposeOption": "GLASS"
+                "disposeOption": ""
             },
             {
                 "disposeOption": ""
@@ -3685,7 +3684,7 @@
         "Image": "",
         "DisposeOptions": [
             {
-                "disposeOption": "CONTENITORI STRADALI PILE"
+                "disposeOption": "BATTERIES"
             },
             {
                 "disposeOption": ""
