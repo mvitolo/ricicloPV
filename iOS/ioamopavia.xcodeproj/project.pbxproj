@@ -13,6 +13,7 @@
 		AB946AB81CFDB27B00692BD6 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB946AB61CFDB27B00692BD6 /* LaunchScreen.storyboard */; };
 		AB946AC31CFDB27B00692BD6 /* ioamopaviaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB946AC21CFDB27B00692BD6 /* ioamopaviaTests.swift */; };
 		AB946ACE1CFDB27B00692BD6 /* ioamopaviaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB946ACD1CFDB27B00692BD6 /* ioamopaviaUITests.swift */; };
+		ABB612721D21B8B8007EFE4B /* newdata.json in Resources */ = {isa = PBXBuildFile; fileRef = ABB612711D21B8B8007EFE4B /* newdata.json */; };
 		ABBBC00F1D017AF4000E2130 /* IAPSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBC00E1D017AF4000E2130 /* IAPSearchTableViewController.swift */; };
 		ABBBC0121D017B80000E2130 /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = ABBBC0101D017B80000E2130 /* data.json */; };
 		ABBBC0131D017B80000E2130 /* dispose.json in Resources */ = {isa = PBXBuildFile; fileRef = ABBBC0111D017B80000E2130 /* dispose.json */; };
@@ -53,6 +54,7 @@
 		AB946AC91CFDB27B00692BD6 /* ioamopaviaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ioamopaviaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB946ACD1CFDB27B00692BD6 /* ioamopaviaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ioamopaviaUITests.swift; sourceTree = "<group>"; };
 		AB946ACF1CFDB27B00692BD6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ABB612711D21B8B8007EFE4B /* newdata.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = newdata.json; path = ../../resource/newdata.json; sourceTree = "<group>"; };
 		ABBBC00E1D017AF4000E2130 /* IAPSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPSearchTableViewController.swift; sourceTree = "<group>"; };
 		ABBBC0101D017B80000E2130 /* data.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = data.json; path = ../../resource/data.json; sourceTree = "<group>"; };
 		ABBBC0111D017B80000E2130 /* dispose.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; name = dispose.json; path = ../../resource/dispose.json; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 		AB946AAA1CFDB27A00692BD6 /* ioamopavia */ = {
 			isa = PBXGroup;
 			children = (
+				ABB612711D21B8B8007EFE4B /* newdata.json */,
 				ABBBC0101D017B80000E2130 /* data.json */,
 				ABBBC0111D017B80000E2130 /* dispose.json */,
 				AB946AAB1CFDB27B00692BD6 /* AppDelegate.swift */,
@@ -272,6 +275,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AB946AB81CFDB27B00692BD6 /* LaunchScreen.storyboard in Resources */,
+				ABB612721D21B8B8007EFE4B /* newdata.json in Resources */,
 				AB946AB51CFDB27B00692BD6 /* Assets.xcassets in Resources */,
 				AB946AB31CFDB27B00692BD6 /* Main.storyboard in Resources */,
 				ABBBC0121D017B80000E2130 /* data.json in Resources */,
