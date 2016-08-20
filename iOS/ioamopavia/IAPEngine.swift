@@ -19,7 +19,7 @@ class IAPEngine: NSObject {
         
         super.init()
         disposes = readJson("dispose")["DisposeOptions"]
-        wastes = readJson("data")
+        wastes = readJson("newdata")
     }
     
     
