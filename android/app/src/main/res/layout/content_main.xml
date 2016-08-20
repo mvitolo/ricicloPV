@@ -10,7 +10,7 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
-    tools:context="mapelli.info.paviadifferenziata.MainActivity"
+    tools:context=".DifferenziataMainActivity"
     tools:showIn="@layout/activity_main">
 
 
@@ -20,5 +20,6 @@
         android:id="@+id/listView"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
+
         android:layout_alignParentEnd="true"/>
 </RelativeLayout>

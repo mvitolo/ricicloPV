@@ -1,27 +1,38 @@
 package mapelli.info.paviadifferenziata.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Created by francesco on 14/06/16.
  */
 public class Waste {
 
-    private Type type;
+    private List<DisposeOption> disposeOptions;
 
-    public Type getType() {
-        return type;
+    public List<DisposeOption> getDisposeOptions() {
+        return disposeOptions;
     }
 
-    public enum Type {
+    public enum DisposeOption {
         GENERIC
     }
 
 
     private String name;
 
-    public Waste (String name, Type type){
+    public Waste (String name, List<DisposeOption> disposeOptions){
 
         this.name = name;
-        this.type = type;
+        this.disposeOptions = disposeOptions;
+    }
+
+    public Waste (String name, DisposeOption disposeOption) {
+        this(name, new ArrayList<DisposeOption>());
+
+        List<DisposeOption> l= new ArrayList<>(1);
+        l.add(disposeOption);
+        this.disposeOptions = l;
     }
 
     public String getName() {

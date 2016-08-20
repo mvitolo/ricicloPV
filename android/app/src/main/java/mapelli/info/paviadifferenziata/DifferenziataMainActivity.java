@@ -1,11 +1,16 @@
 package mapelli.info.paviadifferenziata;
 
+import android.app.SearchManager;
+import android.content.Context;
+import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
@@ -13,22 +18,27 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
-import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import org.json.JSONArray;
+
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
-import java.util.List;
 
 import mapelli.info.paviadifferenziata.model.Waste;
 import mapelli.info.paviadifferenziata.model.WasteAdapter;
 
-public class MainActivity extends AppCompatActivity {
+public class DifferenziataMainActivity extends AppCompatActivity {
 
-    private static final String TAG = MainActivity.class.getSimpleName();
+    private static final String TAG = DifferenziataMainActivity.class.getSimpleName();
     private FloatingActionButton fab ;
     private View bottomSheet;
     Animation growAnimation ;
     Animation shrinkAnimation;
+    private WasteAdapter adapter = null;
+    private ArrayList<Waste> wastes = new ArrayList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +52,8 @@ public class MainActivity extends AppCompatActivity {
         setupFab();
         //setupBottomSheet();
         initListView();
+        handleIntent(getIntent());
+
 
 
     }
@@ -123,28 +135,149 @@ public class MainActivity extends AppCompatActivity {
         list.setAdapter(getListAdapter());
         list.setTextFilterEnabled(true);
 
+
     }
 
-    private ListAdapter getListAdapter() {
-        return new WasteAdapter(this, R.layout.waste_row, getWasteList().toArray(new
-                Waste[0]));
+    private WasteAdapter getListAdapter() {
+        if (adapter == null) {
+            adapter = new WasteAdapter(this, R.layout.waste_row, wastes);
+            loadWastes();
+        }
+
+
+        return adapter;
     }
 
-    private List<Waste> getWasteList() {
-        ArrayList<Waste> wastes = new ArrayList<>();
-        wastes.add(new Waste("a", Waste.Type.GENERIC));
-        wastes.add(new Waste("b", Waste.Type.GENERIC));
-        wastes.add(new Waste("c", Waste.Type.GENERIC));
-        wastes.add(new Waste("d", Waste.Type.GENERIC));
-        return wastes;
+    private void loadWastes() {
+        AsyncTask t = new AsyncTask() {
+            @Override
+            protected Object doInBackground(Object[] params) {
+               return getWasteList();
+            }
+
+            @Override
+            protected void onPostExecute(Object o) {
+                super.onPostExecute(o);
+                adapter.notifyDataSetChanged();
+            }
+        };
+
+        t.execute();
+    }
+
+    private boolean getWasteList() {
+
+        InputStream inputStream = getResources().openRawResource(R.raw.newdata);
+        ByteArrayOutputStream byteArrayOutputStream = new ByteArrayOutputStream();
+
+        int ctr;
+        try {
+            ctr = inputStream.read();
+            while (ctr != -1) {
+                byteArrayOutputStream.write(ctr);
+                ctr = inputStream.read();
+            }
+            inputStream.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        Log.v("Text Data", byteArrayOutputStream.toString());
+        try {
+            // Parse the data into jsonobject to get original data in form of json.
+            JSONArray jsonArray = new JSONArray(
+                    byteArrayOutputStream.toString());
+            String name = "";
+            ArrayList<String[]> data = new ArrayList<String[]>();
+            for (int i = 0; i < jsonArray.length(); i++) {
+                name = jsonArray.getJSONObject(i).getString("Name");
+
+                Log.v("name", name);
+               adapter.add(new Waste(name, Waste.DisposeOption.GENERIC));
+                adapter.notifyDataSetChanged();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return true;
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
+        // Associate searchable configuration with the SearchView
+        SearchManager searchManager =
+                (SearchManager) getSystemService(Context.SEARCH_SERVICE);
+        SearchView searchView =
+                (SearchView) menu.findItem(R.id.menu_search).getActionView();
+
+        if (searchManager != null && searchView != null) {
+            searchView.setSearchableInfo(
+                    searchManager.getSearchableInfo(getComponentName()));
+        }
+
+        if (searchView != null){
+            searchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+                @Override
+                public boolean onQueryTextSubmit(String query) {
+
+                    searchString(query);
+                    return true;
+                }
+
+                @Override
+                public boolean onQueryTextChange(String newText) {
+
+                        searchString(newText);
+
+                    return true;
+                }
+            });
+        }
         return true;
     }
+
+
+    private void searchString(String s) {
+        Log.d(TAG, "search for " + s);
+        getListAdapter().getFilter().filter("", null);
+        getListAdapter().getFilter().filter(s, null);
+        getListAdapter().notifyDataSetChanged();
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @Override
+    protected void onNewIntent(Intent intent) {
+        handleIntent(intent);
+    }
+
+    private void handleIntent(Intent intent) {
+        if (Intent.ACTION_SEARCH.equals(intent.getAction())){
+            String q = intent.getStringExtra(SearchManager.QUERY);
+            Log.d(TAG, "got intent with query " + q);
+        searchString(q);
+        } else {
+            super.onNewIntent(intent);
+        }
+    }
+
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -153,10 +286,7 @@ public class MainActivity extends AppCompatActivity {
         // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
-        }
+
 
         return super.onOptionsItemSelected(item);
     }
