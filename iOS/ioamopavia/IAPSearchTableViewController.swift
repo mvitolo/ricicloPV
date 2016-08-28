@@ -84,13 +84,20 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
     
     func searchBarTextDidEndEditing(searchBar: UISearchBar) {
         searchActive = false;
+        dispatch_async(dispatch_get_main_queue(), {
+            
+            self.searchBar.resignFirstResponder()
+            self.tableView.resignFirstResponder()
+        })
+
     }
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false;
         dispatch_async(dispatch_get_main_queue(), {
 
-        searchBar.resignFirstResponder()
+        self.searchBar.resignFirstResponder()
+        self.tableView.resignFirstResponder()
         })
     }
     
@@ -110,6 +117,12 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
             if searchText == "" {
                 //filtered = self.wastes.array
             }
+            dispatch_async(dispatch_get_main_queue(), {
+                
+                self.searchBar.resignFirstResponder()
+                self.tableView.resignFirstResponder()
+            })
+
         } else {
             searchActive = true;
         }
