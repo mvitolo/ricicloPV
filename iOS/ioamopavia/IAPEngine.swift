@@ -99,4 +99,86 @@ class IAPEngine: NSObject {
             alpha: CGFloat(1.0)
         )
     }
+    
+    func getHeaderLabel() -> String {
+        
+        let dayoftheweek = NSDate().dayOfWeek()!
+        
+        switch dayoftheweek {
+        case 1://Sunday
+            return "Oggi è Domenica"
+        case 2://Monday
+            return "Oggi è Lunedí"
+        case 3://Tuesday
+            return "Oggi è Martedí"
+        case 4://Wednsday
+            return "Oggi è Mercoledí"
+        case 5://Thursday
+            return "Oggi è Giovedí"
+        case 6://Friday
+            return "Oggi è Venerdí"
+        case 7://Saturday
+            return "Oggi è Sabato"
+        default:
+            return ""
+        }
+    }
+    
+    func getFooterLabel() -> String {
+        let dayoftheweek = NSDate().dayOfWeek()!
+        
+        switch dayoftheweek {
+        case 1://Sunday
+            return "Niente da buttare"
+        case 2://Monday
+            return "bisogna buttare l'umido"
+        case 3://Tuesday
+            return "bisogna buttare la carta"
+        case 4://Wednsday
+            return "bisogna buttare l'indifferenziato"
+        case 5://Thursday
+            return "bisogna buttare la plastica"
+        case 6://Friday
+            return "bisogna buttare l'umido"
+        case 7://Saturday
+            return "Niente da butare"
+        default:
+            return ""
+        }
+    }
+    
+    func getImageForDay() -> String {
+        let dayoftheweek = NSDate().dayOfWeek()!
+        
+        switch dayoftheweek {
+        case 1://Sunday
+            return "smiley"
+        case 2://Monday
+            return "umidoBig"
+        case 3://Tuesday
+            return "cartaBig"
+        case 4://Wednsday
+            return "seccoBig"
+        case 5://Thursday
+            return "plasticaBig"
+        case 6://Friday
+            return "umidoBig"
+        case 7://Saturday
+            return "smiley"
+        default:
+            return "smiley"
+        }
+    }
+}
+
+extension NSDate {
+    func dayOfWeek() -> Int? {
+        if
+            let cal: NSCalendar = NSCalendar.currentCalendar(),
+            let comp: NSDateComponents = cal.components(.Weekday, fromDate: self) {
+            return comp.weekday
+        } else {
+            return nil
+        }
+    }
 }

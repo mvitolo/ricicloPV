@@ -13,6 +13,7 @@ class IAPSearchTableViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
    // @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet weak var emptyView: UIView!
     
     var disposes : JSON!
     var wastes : JSON!
@@ -107,11 +108,13 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
         if(filtered.count == 0){
             searchActive = false;
             if searchText == "" {
-                filtered = self.wastes.array
+                //filtered = self.wastes.array
             }
         } else {
             searchActive = true;
         }
+        self.tableView.hidden = !searchActive
+        self.emptyView.hidden = searchActive
         self.tableView.reloadData()
     }
 }

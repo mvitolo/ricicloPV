@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AB49F8291D72FB5200468928 /* IAPReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB49F8281D72FB5200468928 /* IAPReminderViewController.swift */; };
 		AB946AAC1CFDB27B00692BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB946AAB1CFDB27B00692BD6 /* AppDelegate.swift */; };
 		AB946AB31CFDB27B00692BD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB946AB11CFDB27B00692BD6 /* Main.storyboard */; };
 		AB946AB51CFDB27B00692BD6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AB946AB41CFDB27B00692BD6 /* Assets.xcassets */; };
@@ -42,6 +43,7 @@
 
 /* Begin PBXFileReference section */
 		73DB1EE6306A8F97FD547FC1 /* Pods-ioamopavia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioamopavia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ioamopavia/Pods-ioamopavia.debug.xcconfig"; sourceTree = "<group>"; };
+		AB49F8281D72FB5200468928 /* IAPReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPReminderViewController.swift; sourceTree = "<group>"; };
 		AB946AA81CFDB27A00692BD6 /* ioamopavia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioamopavia.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB946AAB1CFDB27B00692BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB946AB21CFDB27B00692BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -138,6 +140,7 @@
 				ABBBC0111D017B80000E2130 /* dispose.json */,
 				AB946AAB1CFDB27B00692BD6 /* AppDelegate.swift */,
 				AB946AB11CFDB27B00692BD6 /* Main.storyboard */,
+				AB49F8281D72FB5200468928 /* IAPReminderViewController.swift */,
 				ABBBC00E1D017AF4000E2130 /* IAPSearchTableViewController.swift */,
 				AB946AB41CFDB27B00692BD6 /* Assets.xcassets */,
 				AB946AB61CFDB27B00692BD6 /* LaunchScreen.storyboard */,
@@ -354,6 +357,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ABBBC00F1D017AF4000E2130 /* IAPSearchTableViewController.swift in Sources */,
+				AB49F8291D72FB5200468928 /* IAPReminderViewController.swift in Sources */,
 				AB946AAC1CFDB27B00692BD6 /* AppDelegate.swift in Sources */,
 				ABBBC0171D01F037000E2130 /* IAPSearchCell.swift in Sources */,
 				ABBBC0151D017C09000E2130 /* IAPEngine.swift in Sources */,
