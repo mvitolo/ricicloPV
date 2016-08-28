@@ -9,14 +9,16 @@
 import UIKit
 import SwiftyJSON
 
-class IAPSearchTableViewController: UITableViewController {
+class IAPSearchTableViewController: UIViewController {
 
-    @IBOutlet var searchBar: UISearchBar!
+    @IBOutlet weak var tableView: UITableView!
+   // @IBOutlet var searchBar: UISearchBar!
     
     var disposes : JSON!
     var wastes : JSON!
     var filtered : [JSON]!
-    
+    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
+
     var searchActive : Bool = false
     
     override func viewDidLoad() {
@@ -24,7 +26,11 @@ class IAPSearchTableViewController: UITableViewController {
         self.disposes = IAPEngine.sharedInstance.disposes
         self.wastes = IAPEngine.sharedInstance.wastes
         self.filtered = self.wastes.arrayValue
-        self.title = "Differenziata PV"
+       //self.title = "Differenziata PV"
+        searchBar.placeholder = "Cosa vuoi buttare?"
+   //     let leftNavBarButton = UINavigationItem(customView:searchBar)
+        self.navigationItem.titleView = searchBar
+        searchBar.delegate = self
     }
 
     override func didReceiveMemoryWarning() {
@@ -33,19 +39,21 @@ class IAPSearchTableViewController: UITableViewController {
     }
 
     // MARK: - Table view data source
+}
+extension IAPSearchTableViewController : UITableViewDataSource{
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return (self.filtered.count)
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("IAPSearchCell", forIndexPath: indexPath) as! IAPSearchCell
 
         cell.waste?.text = filtered[indexPath.row]["Name"].string
@@ -79,7 +87,10 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
     
     func searchBarCancelButtonClicked(searchBar: UISearchBar) {
         searchActive = false;
+        dispatch_async(dispatch_get_main_queue(), {
+
         searchBar.resignFirstResponder()
+        })
     }
     
     func searchBarSearchButtonClicked(searchBar: UISearchBar) {
