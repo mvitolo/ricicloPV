@@ -116,7 +116,14 @@
                             <constraint firstItem="3ZX-0e-UKK" firstAttribute="top" secondItem="jOF-Ph-r1Y" secondAttribute="bottom" id="uWk-ac-xky"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="DBA-D3-xSN"/>
+                    <navigationItem key="navigationItem" id="DBA-D3-xSN">
+                        <barButtonItem key="rightBarButtonItem" image="settings" id="Rdf-nC-uYy">
+                            <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <connections>
+                                <segue destination="djZ-up-X30" kind="show" id="H6v-eJ-90n"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="emptyView" destination="cok-0l-UvZ" id="BGp-xe-NWR"/>
                         <outlet property="tableView" destination="jOF-Ph-r1Y" id="74v-x5-a7m"/>
@@ -127,10 +134,58 @@
             </objects>
             <point key="canvasLocation" x="101" y="1"/>
         </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="Zis-pJ-YS4">
+            <objects>
+                <viewController id="djZ-up-X30" customClass="IAPSettingsViewController" customModule="ioamopavia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="dHk-WT-uOe"/>
+                        <viewControllerLayoutGuide type="bottom" id="EHZ-8F-cQL"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aHi-zS-jh3">
+                        <rect key="frame" x="0.0" y="64" width="600" height="536"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9GG-cw-96v">
+                                <rect key="frame" x="541" y="30" width="51" height="31"/>
+                                <connections>
+                                    <action selector="notificationAction:" destination="djZ-up-X30" eventType="valueChanged" id="lgd-3V-C62"/>
+                                </connections>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disattiva notifiche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P2-bN-tNj">
+                                <rect key="frame" x="30" y="30" width="501" height="31"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="9GG-cw-96v" firstAttribute="top" secondItem="dHk-WT-uOe" secondAttribute="bottom" constant="30" id="7Qu-2V-kgt"/>
+                            <constraint firstItem="9GG-cw-96v" firstAttribute="bottom" secondItem="6P2-bN-tNj" secondAttribute="bottom" id="82Z-dj-YdY"/>
+                            <constraint firstItem="9GG-cw-96v" firstAttribute="leading" secondItem="6P2-bN-tNj" secondAttribute="trailing" constant="10" id="Phd-Rz-lO3"/>
+                            <constraint firstItem="9GG-cw-96v" firstAttribute="trailing" secondItem="aHi-zS-jh3" secondAttribute="trailingMargin" constant="10" id="ZGK-vD-Dti"/>
+                            <constraint firstItem="6P2-bN-tNj" firstAttribute="leading" secondItem="aHi-zS-jh3" secondAttribute="leadingMargin" constant="10" id="cej-dS-EYP"/>
+                            <constraint firstItem="9GG-cw-96v" firstAttribute="top" secondItem="6P2-bN-tNj" secondAttribute="top" id="xZ1-GI-z2W"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="notificationLabel" destination="6P2-bN-tNj" id="H3d-C2-39F"/>
+                        <outlet property="notificationSwitch" destination="9GG-cw-96v" id="8pc-Ok-yAn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cv1-4t-dev" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="862" y="-779"/>
+        </scene>
         <!--Reminder View Controller-->
         <scene sceneID="RyL-t7-CUp">
             <objects>
                 <viewController id="pNr-9f-el8" customClass="IAPReminderViewController" customModule="ioamopavia" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cFG-tL-x8T"/>
+                        <viewControllerLayoutGuide type="bottom" id="p3E-wL-tLO"/>
+                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="t2b-LF-8JW">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="536"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -148,7 +203,7 @@
                                     <constraint firstAttribute="width" constant="200" id="1Sd-p5-26r"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ISa-Fd-wZn">
@@ -157,7 +212,7 @@
                                     <constraint firstAttribute="width" constant="200" id="Ce4-v1-6LL"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -182,4 +237,7 @@
             <point key="canvasLocation" x="836" y="1"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings" width="24" height="24"/>
+    </resources>
 </document>

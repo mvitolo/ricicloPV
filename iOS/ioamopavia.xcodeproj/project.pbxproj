@@ -21,6 +21,7 @@
 		ABBBC0151D017C09000E2130 /* IAPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBC0141D017C09000E2130 /* IAPEngine.swift */; };
 		ABBBC0171D01F037000E2130 /* IAPSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBC0161D01F037000E2130 /* IAPSearchCell.swift */; };
 		ABBBC0191D01FDC2000E2130 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABBBC0181D01FDC2000E2130 /* Media.xcassets */; };
+		ABFD66A41D858D0C00F9C319 /* IAPSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFD66A31D858D0C00F9C319 /* IAPSettingsViewController.swift */; };
 		ADE4788B71866DC4BAFE54D4 /* Pods_ioamopavia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C03D0421E68301B654AEBB /* Pods_ioamopavia.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,6 +64,7 @@
 		ABBBC0141D017C09000E2130 /* IAPEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPEngine.swift; sourceTree = "<group>"; };
 		ABBBC0161D01F037000E2130 /* IAPSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPSearchCell.swift; sourceTree = "<group>"; };
 		ABBBC0181D01FDC2000E2130 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		ABFD66A31D858D0C00F9C319 /* IAPSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPSettingsViewController.swift; sourceTree = "<group>"; };
 		CD0AF998EEE589394FB328A7 /* Pods-ioamopavia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioamopavia.release.xcconfig"; path = "Pods/Target Support Files/Pods-ioamopavia/Pods-ioamopavia.release.xcconfig"; sourceTree = "<group>"; };
 		D1C03D0421E68301B654AEBB /* Pods_ioamopavia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ioamopavia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -141,6 +143,7 @@
 				AB946AAB1CFDB27B00692BD6 /* AppDelegate.swift */,
 				AB946AB11CFDB27B00692BD6 /* Main.storyboard */,
 				AB49F8281D72FB5200468928 /* IAPReminderViewController.swift */,
+				ABFD66A31D858D0C00F9C319 /* IAPSettingsViewController.swift */,
 				ABBBC00E1D017AF4000E2130 /* IAPSearchTableViewController.swift */,
 				AB946AB41CFDB27B00692BD6 /* Assets.xcassets */,
 				AB946AB61CFDB27B00692BD6 /* LaunchScreen.storyboard */,
@@ -370,6 +373,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ABFD66A41D858D0C00F9C319 /* IAPSettingsViewController.swift in Sources */,
 				ABBBC00F1D017AF4000E2130 /* IAPSearchTableViewController.swift in Sources */,
 				AB49F8291D72FB5200468928 /* IAPReminderViewController.swift in Sources */,
 				AB946AAC1CFDB27B00692BD6 /* AppDelegate.swift in Sources */,

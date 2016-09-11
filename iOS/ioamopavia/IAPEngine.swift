@@ -12,6 +12,8 @@ import SwiftyJSON
 class IAPEngine: NSObject {
     static let sharedInstance = IAPEngine()
     
+    static let appTitle = "diffPavia"
+    
     var disposes : JSON!
     var wastes : JSON!
     
@@ -168,6 +170,70 @@ class IAPEngine: NSObject {
         default:
             return "smiley"
         }
+    }
+    
+    func getReminderTitle(dayoftheweek: NSInteger) -> String {
+        
+        switch dayoftheweek {
+        case 1://Sunday
+            return "Ricordati che devi buttare l'Umido!"
+        case 2://Monday
+            return "Ricordati che devi buttare la Carta!"
+        case 3://Tuesday
+            return "Ricordati che devi buttare l'Indifferenziata!"
+        case 4://Wednsday
+            return "Ricordati che devi buttare la Plastica!"
+        case 5://Thursday
+            return "Ricordati che devi buttare l'Umido!"
+        case 6://Friday
+            return "smiley"
+        case 7://Saturday
+            return "smiley"
+        default:
+            return "smiley"
+        }
+    }
+    
+    func scheduleLocalNotifications() {
+        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "IAPNotificationEnabled")
+
+        for i in 1...4 {
+            let fireDate = getDateOfSpecificDay(i)
+            let notification = UILocalNotification()
+            
+            let dict:NSDictionary = ["ID" : String(format:"com.iap.reminder%d",i)]
+            notification.userInfo = dict as! [String : String]
+            notification.alertBody = getReminderTitle(i)
+            notification.alertAction = "Open"
+            notification.fireDate = fireDate
+            notification.repeatInterval = NSCalendarUnit.Weekday  // Can be used to repeat the notification
+            notification.soundName = UILocalNotificationDefaultSoundName
+            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+        }
+    }
+    
+    func unscheduleLocalNotifications() {
+        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "IAPNotificationEnabled")
+
+        UIApplication.sharedApplication().cancelAllLocalNotifications()
+    }
+    
+    func getDateOfSpecificDay(day:NSInteger) -> NSDate {/// here day will be 1 or 2.. or 7
+        let desiredWeekday = day
+        let weekDateRange = NSCalendar.currentCalendar().maximumRangeOfUnit(NSCalendarUnit.Weekday)
+        let daysInWeek =  weekDateRange.length - weekDateRange.location + 1
+        
+        let dateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.Weekday, fromDate: NSDate())
+        let currentWeekDay = dateComponents.weekday
+        let differenceDays = (desiredWeekday - currentWeekDay + daysInWeek) % daysInWeek
+        let daysComponents = NSDateComponents()
+        daysComponents.day = differenceDays
+        daysComponents.hour = 19
+        daysComponents.minute = 0
+        daysComponents.second = 0
+        
+        let resultDate = NSCalendar.currentCalendar().dateByAddingComponents(daysComponents, toDate: NSDate(), options: NSCalendarOptions.MatchFirst)
+        return resultDate!
     }
 }
 
