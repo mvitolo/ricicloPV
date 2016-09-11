@@ -196,6 +196,7 @@ class IAPEngine: NSObject {
     
     func scheduleLocalNotifications() {
         NSUserDefaults.standardUserDefaults().setBool(true, forKey: "IAPNotificationEnabled")
+        NSUserDefaults.standardUserDefaults().synchronize()
 
         for i in 1...4 {
             let fireDate = getDateOfSpecificDay(i)
@@ -214,7 +215,7 @@ class IAPEngine: NSObject {
     
     func unscheduleLocalNotifications() {
         NSUserDefaults.standardUserDefaults().setBool(false, forKey: "IAPNotificationEnabled")
-
+        NSUserDefaults.standardUserDefaults().synchronize()
         UIApplication.sharedApplication().cancelAllLocalNotifications()
     }
     
