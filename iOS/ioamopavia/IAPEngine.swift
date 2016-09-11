@@ -129,17 +129,17 @@ class IAPEngine: NSObject {
         
         switch dayoftheweek {
         case 1://Sunday
-            return "Niente da buttare"
+            return "domani ritirano l'umido"
         case 2://Monday
-            return "bisogna buttare l'umido"
+            return "domani ritirano la carta"
         case 3://Tuesday
-            return "bisogna buttare la carta"
+            return "domani ritirano l'indifferenziato"
         case 4://Wednsday
-            return "bisogna buttare l'indifferenziato"
+            return "domani ritirano la plastica"
         case 5://Thursday
-            return "bisogna buttare la plastica"
+            return "domani ritirano l'umido"
         case 6://Friday
-            return "bisogna buttare l'umido"
+            return "Niente da buttare"
         case 7://Saturday
             return "Niente da butare"
         default:
@@ -152,17 +152,17 @@ class IAPEngine: NSObject {
         
         switch dayoftheweek {
         case 1://Sunday
-            return "smiley"
+            return "umidoBig"
         case 2://Monday
-            return "umidoBig"
-        case 3://Tuesday
             return "cartaBig"
-        case 4://Wednsday
+        case 3://Tuesday
             return "seccoBig"
-        case 5://Thursday
+        case 4://Wednsday
             return "plasticaBig"
-        case 6://Friday
+        case 5://Thursday
             return "umidoBig"
+        case 6://Friday
+            return "smiley"
         case 7://Saturday
             return "smiley"
         default:
