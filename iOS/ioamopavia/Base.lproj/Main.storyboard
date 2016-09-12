@@ -27,7 +27,7 @@
         <!--Search Table View Controller-->
         <scene sceneID="2ny-p6-j65">
             <objects>
-                <viewController id="N0M-Ef-Vfu" customClass="IAPSearchTableViewController" customModule="ioamopavia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="N0M-Ef-Vfu" customClass="IAPSearchTableViewController" customModule="RicicloPV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ttC-nB-gti"/>
                         <viewControllerLayoutGuide type="bottom" id="3ZX-0e-UKK"/>
@@ -44,7 +44,7 @@
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </view>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IAPSearchCell" rowHeight="60" id="o4X-Re-iMi" customClass="IAPSearchCell" customModule="ioamopavia" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IAPSearchCell" rowHeight="60" id="o4X-Re-iMi" customClass="IAPSearchCell" customModule="RicicloPV" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="600" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="o4X-Re-iMi" id="tiX-zq-KBL">
@@ -138,7 +138,7 @@
         <!--Settings View Controller-->
         <scene sceneID="Zis-pJ-YS4">
             <objects>
-                <viewController id="djZ-up-X30" customClass="IAPSettingsViewController" customModule="ioamopavia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="djZ-up-X30" customClass="IAPSettingsViewController" customModule="RicicloPV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="dHk-WT-uOe"/>
                         <viewControllerLayoutGuide type="bottom" id="EHZ-8F-cQL"/>
@@ -153,7 +153,7 @@
                                     <action selector="notificationAction:" destination="djZ-up-X30" eventType="valueChanged" id="lgd-3V-C62"/>
                                 </connections>
                             </switch>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Disattiva notifiche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P2-bN-tNj">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Notifiche" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6P2-bN-tNj">
                                 <rect key="frame" x="30" y="30" width="501" height="31"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -182,7 +182,7 @@
         <!--Reminder View Controller-->
         <scene sceneID="RyL-t7-CUp">
             <objects>
-                <viewController id="pNr-9f-el8" customClass="IAPReminderViewController" customModule="ioamopavia" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pNr-9f-el8" customClass="IAPReminderViewController" customModule="RicicloPV" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="cFG-tL-x8T"/>
                         <viewControllerLayoutGuide type="bottom" id="p3E-wL-tLO"/>
