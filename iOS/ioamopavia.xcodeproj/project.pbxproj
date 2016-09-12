@@ -45,7 +45,7 @@
 /* Begin PBXFileReference section */
 		73DB1EE6306A8F97FD547FC1 /* Pods-ioamopavia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioamopavia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ioamopavia/Pods-ioamopavia.debug.xcconfig"; sourceTree = "<group>"; };
 		AB49F8281D72FB5200468928 /* IAPReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPReminderViewController.swift; sourceTree = "<group>"; };
-		AB946AA81CFDB27A00692BD6 /* ioamopavia.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ioamopavia.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		AB946AA81CFDB27A00692BD6 /* RicicloPV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RicicloPV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB946AAB1CFDB27B00692BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AB946AB21CFDB27B00692BD6 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AB946AB41CFDB27B00692BD6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -127,7 +127,7 @@
 		AB946AA91CFDB27A00692BD6 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				AB946AA81CFDB27A00692BD6 /* ioamopavia.app */,
+				AB946AA81CFDB27A00692BD6 /* RicicloPV.app */,
 				AB946ABE1CFDB27B00692BD6 /* ioamopaviaTests.xctest */,
 				AB946AC91CFDB27B00692BD6 /* ioamopaviaUITests.xctest */,
 			);
@@ -176,9 +176,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		AB946AA71CFDB27A00692BD6 /* ioamopavia */ = {
+		AB946AA71CFDB27A00692BD6 /* RicicloPV */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AB946AD21CFDB27B00692BD6 /* Build configuration list for PBXNativeTarget "ioamopavia" */;
+			buildConfigurationList = AB946AD21CFDB27B00692BD6 /* Build configuration list for PBXNativeTarget "RicicloPV" */;
 			buildPhases = (
 				3AAC1B28BF57C6C0EE9FAE8C /* 📦 Check Pods Manifest.lock */,
 				AB946AA41CFDB27A00692BD6 /* Sources */,
@@ -192,9 +192,9 @@
 			);
 			dependencies = (
 			);
-			name = ioamopavia;
+			name = RicicloPV;
 			productName = ioamopavia;
-			productReference = AB946AA81CFDB27A00692BD6 /* ioamopavia.app */;
+			productReference = AB946AA81CFDB27A00692BD6 /* RicicloPV.app */;
 			productType = "com.apple.product-type.application";
 		};
 		AB946ABD1CFDB27B00692BD6 /* ioamopaviaTests */ = {
@@ -269,7 +269,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				AB946AA71CFDB27A00692BD6 /* ioamopavia */,
+				AB946AA71CFDB27A00692BD6 /* RicicloPV */,
 				AB946ABD1CFDB27B00692BD6 /* ioamopaviaTests */,
 				AB946AC81CFDB27B00692BD6 /* ioamopaviaUITests */,
 			);
@@ -403,12 +403,12 @@
 /* Begin PBXTargetDependency section */
 		AB946AC01CFDB27B00692BD6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AB946AA71CFDB27A00692BD6 /* ioamopavia */;
+			target = AB946AA71CFDB27A00692BD6 /* RicicloPV */;
 			targetProxy = AB946ABF1CFDB27B00692BD6 /* PBXContainerItemProxy */;
 		};
 		AB946ACB1CFDB27B00692BD6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = AB946AA71CFDB27A00692BD6 /* ioamopavia */;
+			target = AB946AA71CFDB27A00692BD6 /* RicicloPV */;
 			targetProxy = AB946ACA1CFDB27B00692BD6 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -600,7 +600,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AB946AD21CFDB27B00692BD6 /* Build configuration list for PBXNativeTarget "ioamopavia" */ = {
+		AB946AD21CFDB27B00692BD6 /* Build configuration list for PBXNativeTarget "RicicloPV" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				AB946AD31CFDB27B00692BD6 /* Debug */,

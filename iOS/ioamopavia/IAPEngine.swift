@@ -12,7 +12,7 @@ import SwiftyJSON
 class IAPEngine: NSObject {
     static let sharedInstance = IAPEngine()
     
-    static let appTitle = "diffPavia"
+    static let appTitle = "RicicloPV"
     
     var disposes : JSON!
     var wastes : JSON!
@@ -131,17 +131,17 @@ class IAPEngine: NSObject {
         
         switch dayoftheweek {
         case 1://Sunday
-            return "domani ritirano l'umido"
-        case 2://Monday
-            return "domani ritirano la carta"
-        case 3://Tuesday
-            return "domani ritirano l'indifferenziato"
-        case 4://Wednsday
-            return "domani ritirano la plastica"
-        case 5://Thursday
-            return "domani ritirano l'umido"
-        case 6://Friday
             return "Niente da buttare"
+        case 2:
+            return "stasera ritirano l'umido"
+        case 3:
+            return "stasera ritirano la carta"
+        case 4:
+            return "stasera ritirano l'indifferenziato"
+        case 5:
+            return "stasera ritirano la plastica"
+        case 6:
+            return "stasera ritirano l'umido"
         case 7://Saturday
             return "Niente da butare"
         default:
@@ -154,16 +154,16 @@ class IAPEngine: NSObject {
         
         switch dayoftheweek {
         case 1://Sunday
+            return "smiley"
+        case 2:
             return "umidoBig"
-        case 2://Monday
+        case 3:
             return "cartaBig"
-        case 3://Tuesday
+        case 4:
             return "seccoBig"
-        case 4://Wednsday
+        case 5:
             return "plasticaBig"
-        case 5://Thursday
-            return "umidoBig"
-        case 6://Friday
+        case 6:
             return "smiley"
         case 7://Saturday
             return "smiley"
@@ -176,21 +176,21 @@ class IAPEngine: NSObject {
         
         switch dayoftheweek {
         case 1://Sunday
+            return ""
+        case 2:
             return "Ricordati che devi buttare l'Umido!"
-        case 2://Monday
+        case 3:
             return "Ricordati che devi buttare la Carta!"
-        case 3://Tuesday
+        case 4:
             return "Ricordati che devi buttare l'Indifferenziata!"
-        case 4://Wednsday
+        case 5:
             return "Ricordati che devi buttare la Plastica!"
-        case 5://Thursday
+        case 6:
             return "Ricordati che devi buttare l'Umido!"
-        case 6://Friday
-            return "smiley"
-        case 7://Saturday
-            return "smiley"
+        case 7:
+            return ""
         default:
-            return "smiley"
+            return ""
         }
     }
     
