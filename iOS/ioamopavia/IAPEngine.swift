@@ -80,6 +80,23 @@ class IAPEngine: NSObject {
         }
     }
     
+    func getDisposeImageBig(disposeName:String) -> UIImage {
+        switch disposeName {
+        case "GLASS":
+            return UIImage(named: "vetroBig")!
+        case "HUMID":
+            return UIImage(named: "umidoBig")!
+        case "PAPER":
+            return UIImage(named: "cartaBig")!
+        case "PLASTIC":
+            return UIImage(named: "plasticaBig")!
+        case "GENERIC":
+            return UIImage(named: "seccoBig")!
+        default:
+            return UIImage()
+        }
+    }
+    
     func hexStringToUIColor (hex:String) -> UIColor {
         var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
         
@@ -235,6 +252,16 @@ class IAPEngine: NSObject {
         
         let resultDate = NSCalendar.currentCalendar().dateByAddingComponents(daysComponents, toDate: NSDate(), options: NSCalendarOptions.MatchFirst)
         return resultDate!
+    }
+    
+    func getDisposeData(disposeName:String) -> String {
+        for dispose in disposes["DisposeOption"].array! {
+            if disposeName == dispose["Name"].string{
+                let ret = dispose["Description"].string! + "\n" + dispose["Container"].string! + "\n" + dispose["Procedure"].string!
+                return ret
+            }
+        }
+        return ""
     }
 }
 

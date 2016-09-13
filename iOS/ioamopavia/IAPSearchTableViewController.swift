@@ -18,6 +18,8 @@ class IAPSearchTableViewController: UIViewController {
     var disposes : JSON!
     var wastes : JSON!
     var filtered : [JSON]!
+    var selectedWaste : JSON!
+    
     lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
 
     var searchActive : Bool = false
@@ -32,13 +34,28 @@ class IAPSearchTableViewController: UIViewController {
    //     let leftNavBarButton = UINavigationItem(customView:searchBar)
         self.navigationItem.titleView = searchBar
         searchBar.delegate = self
+
     }
 
+    override func viewDidDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: false)
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // search2waste
+        if segue.identifier == "search2waste" {
+            (segue.destinationViewController as! IAPWasteViewController).selectedWaste = self.selectedWaste
+        }
+    }
     // MARK: - Table view data source
 }
 extension IAPSearchTableViewController : UITableViewDataSource{
@@ -74,7 +91,13 @@ extension IAPSearchTableViewController : UITableViewDataSource{
 
         return cell
     }//daeddb
-
+}
+extension IAPSearchTableViewController : UITableViewDelegate{
+    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+        selectedWaste = filtered[indexPath.row]
+        let cell = tableView.cellForRowAtIndexPath(indexPath)
+        cell?.selected = false
+    }
 }
 
 extension IAPSearchTableViewController : UISearchBarDelegate{
