@@ -66,12 +66,22 @@ extension IAPWasteViewController : UITableViewDataSource{
     
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "IAPWasteTableViewCell", for: indexPath) as! IAPWasteTableViewCell
         let dispose = selectedWaste["DisposeOptions"][indexPath.row]["disposeOption"].string!
-        cell.disposeDescription.text = IAPEngine.sharedInstance.getDisposeData(dispose)
-        cell.disposeImage.image = IAPEngine.sharedInstance.getDisposeImageBig(dispose)
+
+        let im = IAPEngine.sharedInstance.getDisposeImageBig(dispose)
+        if im == nil {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IAPWasteNoImageTableViewCell", for: indexPath) as! IAPWasteNoImageTableViewCell
+            cell.disposeDescription.text = IAPEngine.sharedInstance.getDisposeData(dispose)
+            
+            return cell
+            
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "IAPWasteTableViewCell", for: indexPath) as! IAPWasteTableViewCell
+            cell.disposeDescription.text = IAPEngine.sharedInstance.getDisposeData(dispose)
+            cell.disposeImage.image = im
         
-        return cell
+            return cell
+        }
     }//daeddb
 }
 

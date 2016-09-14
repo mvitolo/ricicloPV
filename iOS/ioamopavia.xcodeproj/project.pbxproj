@@ -22,6 +22,7 @@
 		ABBBC0151D017C09000E2130 /* IAPEngine.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBC0141D017C09000E2130 /* IAPEngine.swift */; };
 		ABBBC0171D01F037000E2130 /* IAPSearchCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABBBC0161D01F037000E2130 /* IAPSearchCell.swift */; };
 		ABBBC0191D01FDC2000E2130 /* Media.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ABBBC0181D01FDC2000E2130 /* Media.xcassets */; };
+		ABE561BA1D89EDDA00101E93 /* IAPWasteNoImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE561B91D89EDDA00101E93 /* IAPWasteNoImageTableViewCell.swift */; };
 		ABE666561D87E4970029AE3E /* IAPWasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE666551D87E4970029AE3E /* IAPWasteViewController.swift */; };
 		ABE666581D87FCAD0029AE3E /* IAPWasteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE666571D87FCAD0029AE3E /* IAPWasteTableViewCell.swift */; };
 		ABFD66A41D858D0C00F9C319 /* IAPSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFD66A31D858D0C00F9C319 /* IAPSettingsViewController.swift */; };
@@ -68,6 +69,7 @@
 		ABBBC0141D017C09000E2130 /* IAPEngine.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPEngine.swift; sourceTree = "<group>"; };
 		ABBBC0161D01F037000E2130 /* IAPSearchCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPSearchCell.swift; sourceTree = "<group>"; };
 		ABBBC0181D01FDC2000E2130 /* Media.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Media.xcassets; sourceTree = "<group>"; };
+		ABE561B91D89EDDA00101E93 /* IAPWasteNoImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPWasteNoImageTableViewCell.swift; sourceTree = "<group>"; };
 		ABE666551D87E4970029AE3E /* IAPWasteViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPWasteViewController.swift; sourceTree = "<group>"; };
 		ABE666571D87FCAD0029AE3E /* IAPWasteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPWasteTableViewCell.swift; sourceTree = "<group>"; };
 		ABFD66A31D858D0C00F9C319 /* IAPSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPSettingsViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 				ABBBC00E1D017AF4000E2130 /* IAPSearchTableViewController.swift */,
 				ABE666571D87FCAD0029AE3E /* IAPWasteTableViewCell.swift */,
 				ABE666551D87E4970029AE3E /* IAPWasteViewController.swift */,
+				ABE561B91D89EDDA00101E93 /* IAPWasteNoImageTableViewCell.swift */,
 				AB946AB41CFDB27B00692BD6 /* Assets.xcassets */,
 				AB946AB61CFDB27B00692BD6 /* LaunchScreen.storyboard */,
 				AB946AB91CFDB27B00692BD6 /* Info.plist */,
@@ -392,6 +395,7 @@
 			files = (
 				ABFD66A41D858D0C00F9C319 /* IAPSettingsViewController.swift in Sources */,
 				ABBBC00F1D017AF4000E2130 /* IAPSearchTableViewController.swift in Sources */,
+				ABE561BA1D89EDDA00101E93 /* IAPWasteNoImageTableViewCell.swift in Sources */,
 				AB49F8291D72FB5200468928 /* IAPReminderViewController.swift in Sources */,
 				AB946AAC1CFDB27B00692BD6 /* AppDelegate.swift in Sources */,
 				ABBBC0171D01F037000E2130 /* IAPSearchCell.swift in Sources */,

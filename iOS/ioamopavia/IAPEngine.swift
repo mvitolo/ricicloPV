@@ -80,7 +80,7 @@ class IAPEngine: NSObject {
         }
     }
     
-    func getDisposeImageBig(_ disposeName:String) -> UIImage {
+    func getDisposeImageBig(_ disposeName:String) -> UIImage? {
         switch disposeName {
         case "GLASS":
             return UIImage(named: "vetroBig")!
@@ -93,7 +93,7 @@ class IAPEngine: NSObject {
         case "GENERIC":
             return UIImage(named: "seccoBig")!
         default:
-            return UIImage()
+            return nil
         }
     }
     
