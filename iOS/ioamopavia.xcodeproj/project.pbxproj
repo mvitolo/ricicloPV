@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		344C34AEF4CB31A46BB4642D /* Pods_RicicloPV.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F372BCD8882703DA409925BB /* Pods_RicicloPV.framework */; };
 		AB49F8291D72FB5200468928 /* IAPReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB49F8281D72FB5200468928 /* IAPReminderViewController.swift */; };
 		AB946AAC1CFDB27B00692BD6 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AB946AAB1CFDB27B00692BD6 /* AppDelegate.swift */; };
 		AB946AB31CFDB27B00692BD6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AB946AB11CFDB27B00692BD6 /* Main.storyboard */; };
@@ -46,6 +47,7 @@
 
 /* Begin PBXFileReference section */
 		73DB1EE6306A8F97FD547FC1 /* Pods-ioamopavia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioamopavia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ioamopavia/Pods-ioamopavia.debug.xcconfig"; sourceTree = "<group>"; };
+		A45D7824ACBD63CCC3F3CB3C /* Pods-RicicloPV.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicicloPV.debug.xcconfig"; path = "Pods/Target Support Files/Pods-RicicloPV/Pods-RicicloPV.debug.xcconfig"; sourceTree = "<group>"; };
 		AB49F8281D72FB5200468928 /* IAPReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPReminderViewController.swift; sourceTree = "<group>"; };
 		AB946AA81CFDB27A00692BD6 /* RicicloPV.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RicicloPV.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB946AAB1CFDB27B00692BD6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -70,7 +72,9 @@
 		ABE666571D87FCAD0029AE3E /* IAPWasteTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPWasteTableViewCell.swift; sourceTree = "<group>"; };
 		ABFD66A31D858D0C00F9C319 /* IAPSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IAPSettingsViewController.swift; sourceTree = "<group>"; };
 		CD0AF998EEE589394FB328A7 /* Pods-ioamopavia.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioamopavia.release.xcconfig"; path = "Pods/Target Support Files/Pods-ioamopavia/Pods-ioamopavia.release.xcconfig"; sourceTree = "<group>"; };
+		D100AAC91582D7623FF805E1 /* Pods-RicicloPV.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RicicloPV.release.xcconfig"; path = "Pods/Target Support Files/Pods-RicicloPV/Pods-RicicloPV.release.xcconfig"; sourceTree = "<group>"; };
 		D1C03D0421E68301B654AEBB /* Pods_ioamopavia.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ioamopavia.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F372BCD8882703DA409925BB /* Pods_RicicloPV.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_RicicloPV.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADE4788B71866DC4BAFE54D4 /* Pods_ioamopavia.framework in Frameworks */,
+				344C34AEF4CB31A46BB4642D /* Pods_RicicloPV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -103,6 +108,7 @@
 			isa = PBXGroup;
 			children = (
 				D1C03D0421E68301B654AEBB /* Pods_ioamopavia.framework */,
+				F372BCD8882703DA409925BB /* Pods_RicicloPV.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -112,6 +118,8 @@
 			children = (
 				73DB1EE6306A8F97FD547FC1 /* Pods-ioamopavia.debug.xcconfig */,
 				CD0AF998EEE589394FB328A7 /* Pods-ioamopavia.release.xcconfig */,
+				A45D7824ACBD63CCC3F3CB3C /* Pods-RicicloPV.debug.xcconfig */,
+				D100AAC91582D7623FF805E1 /* Pods-RicicloPV.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -246,18 +254,21 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0800;
 				ORGANIZATIONNAME = Matteo;
 				TargetAttributes = {
 					AB946AA71CFDB27A00692BD6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 					};
 					AB946ABD1CFDB27B00692BD6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = AB946AA71CFDB27A00692BD6;
 					};
 					AB946AC81CFDB27B00692BD6 = {
 						CreatedOnToolsVersion = 7.3.1;
+						LastSwiftMigration = 0800;
 						TestTargetID = AB946AA71CFDB27A00692BD6;
 					};
 				};
@@ -326,7 +337,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ioamopavia/Pods-ioamopavia-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RicicloPV/Pods-RicicloPV-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		3AAC1B28BF57C6C0EE9FAE8C /* 📦 Check Pods Manifest.lock */ = {
@@ -369,7 +380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ioamopavia/Pods-ioamopavia-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-RicicloPV/Pods-RicicloPV-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -455,8 +466,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -501,8 +514,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -521,6 +536,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};
@@ -528,25 +544,29 @@
 		};
 		AB946AD31CFDB27B00692BD6 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 73DB1EE6306A8F97FD547FC1 /* Pods-ioamopavia.debug.xcconfig */;
+			baseConfigurationReference = A45D7824ACBD63CCC3F3CB3C /* Pods-RicicloPV.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ioamopavia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.funambol.ioamopavia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		AB946AD41CFDB27B00692BD6 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CD0AF998EEE589394FB328A7 /* Pods-ioamopavia.release.xcconfig */;
+			baseConfigurationReference = D100AAC91582D7623FF805E1 /* Pods-RicicloPV.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = ioamopavia/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.funambol.ioamopavia;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -558,7 +578,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.funambol.ioamopaviaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ioamopavia.app/ioamopavia";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RicicloPV.app/RicicloPV";
 			};
 			name = Debug;
 		};
@@ -570,7 +591,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.funambol.ioamopaviaTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ioamopavia.app/ioamopavia";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RicicloPV.app/RicicloPV";
 			};
 			name = Release;
 		};
@@ -581,6 +603,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.funambol.ioamopaviaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ioamopavia;
 			};
 			name = Debug;
@@ -592,6 +615,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.funambol.ioamopaviaUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_TARGET_NAME = ioamopavia;
 			};
 			name = Release;

@@ -20,7 +20,7 @@ class IAPSearchTableViewController: UIViewController {
     var filtered : [JSON]!
     var selectedWaste : JSON!
     
-    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRectMake(0, 0, 200, 20))
+    lazy   var searchBar:UISearchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 200, height: 20))
 
     var searchActive : Bool = false
     
@@ -37,9 +37,9 @@ class IAPSearchTableViewController: UIViewController {
 
     }
 
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
-        self.tableView.deselectRowAtIndexPath(tableView.indexPathForSelectedRow!, animated: false)
+        self.tableView.deselectRow(at: tableView.indexPathForSelectedRow!, animated: false)
 
     }
     override func didReceiveMemoryWarning() {
@@ -50,42 +50,42 @@ class IAPSearchTableViewController: UIViewController {
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // search2waste
         if segue.identifier == "search2waste" {
-            (segue.destinationViewController as! IAPWasteViewController).selectedWaste = self.selectedWaste
+            (segue.destination as! IAPWasteViewController).selectedWaste = self.selectedWaste
         }
     }
     // MARK: - Table view data source
 }
 extension IAPSearchTableViewController : UITableViewDataSource{
 
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         return (self.filtered.count)
     }
 
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("IAPSearchCell", forIndexPath: indexPath) as! IAPSearchCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IAPSearchCell", for: indexPath) as! IAPSearchCell
 
         cell.waste?.text = filtered[indexPath.row]["Name"].string
         let dispose = filtered[indexPath.row]["DisposeOptions"][0]["disposeOption"].string
         
-        let disposeArray = dispose?.componentsSeparatedByString(", ")
+        let disposeArray = dispose?.components(separatedBy:", ")
         
         cell.dispose.text = IAPEngine.sharedInstance.getDisposeDescritpion(disposeArray!)
         cell.wImage.image = IAPEngine.sharedInstance.getDisposeImage(dispose!)
         
-        if indexPath.row%2 == 0 {
+        if (indexPath as NSIndexPath).row%2 == 0 {
             cell.backgroundColor = IAPEngine.sharedInstance.hexStringToUIColor("#daeddb")
         } else {
-            cell.backgroundColor = UIColor.whiteColor()
+            cell.backgroundColor = UIColor.white
         }
         
 
@@ -93,21 +93,21 @@ extension IAPSearchTableViewController : UITableViewDataSource{
     }//daeddb
 }
 extension IAPSearchTableViewController : UITableViewDelegate{
-    func tableView(tableView: UITableView, didHighlightRowAtIndexPath indexPath: NSIndexPath) {
+    func tableView(_ tableView: UITableView, didHighlightRowAt indexPath: IndexPath) {
         selectedWaste = filtered[indexPath.row]
-        let cell = tableView.cellForRowAtIndexPath(indexPath)
-        cell?.selected = false
+        let cell = tableView.cellForRow(at: indexPath)
+        cell?.isSelected = false
     }
 }
 
 extension IAPSearchTableViewController : UISearchBarDelegate{
-    func searchBarTextDidBeginEditing(searchBar: UISearchBar) {
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         searchActive = true;
     }
     
-    func searchBarTextDidEndEditing(searchBar: UISearchBar) {
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         searchActive = false;
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
             
             self.searchBar.resignFirstResponder()
             self.tableView.resignFirstResponder()
@@ -115,24 +115,24 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
 
     }
     
-    func searchBarCancelButtonClicked(searchBar: UISearchBar) {
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
-        dispatch_async(dispatch_get_main_queue(), {
+        DispatchQueue.main.async(execute: {
 
         self.searchBar.resignFirstResponder()
         self.tableView.resignFirstResponder()
         })
     }
     
-    func searchBarSearchButtonClicked(searchBar: UISearchBar) {
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         searchActive = false;
     }
     
-    func searchBar(searchBar: UISearchBar, textDidChange searchText: String) {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         filtered = (wastes.arrayValue ).filter({ (text) -> Bool in
-            let tmp: NSString = text["Name"].string!
-            let range = tmp.rangeOfString(searchText, options: NSStringCompareOptions.CaseInsensitiveSearch)
+            let tmp: NSString = text["Name"].string! as NSString
+            let range = tmp.range(of: searchText, options: NSString.CompareOptions.caseInsensitive)
             return range.location != NSNotFound
         })
         if(filtered.count == 0){
@@ -140,7 +140,7 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
             if searchText == "" {
                 //filtered = self.wastes.array
             }
-            dispatch_async(dispatch_get_main_queue(), {
+            DispatchQueue.main.async(execute: {
                 
                 self.searchBar.resignFirstResponder()
                 self.tableView.resignFirstResponder()
@@ -149,8 +149,8 @@ extension IAPSearchTableViewController : UISearchBarDelegate{
         } else {
             searchActive = true;
         }
-        self.tableView.hidden = !searchActive
-        self.emptyView.hidden = searchActive
+        self.tableView.isHidden = !searchActive
+        self.emptyView.isHidden = searchActive
         self.tableView.reloadData()
     }
 }

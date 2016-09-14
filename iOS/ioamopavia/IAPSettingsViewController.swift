@@ -15,14 +15,14 @@ class IAPSettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        notificationSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("IAPNotificationEnabled")
+        notificationSwitch.isOn = UserDefaults.standard.bool(forKey: "IAPNotificationEnabled")
 
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        notificationSwitch.on = NSUserDefaults.standardUserDefaults().boolForKey("IAPNotificationEnabled")
+        notificationSwitch.isOn = UserDefaults.standard.bool(forKey: "IAPNotificationEnabled")
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,8 +30,8 @@ class IAPSettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func notificationAction(sender: AnyObject) {
-        if notificationSwitch.on {
+    @IBAction func notificationAction(_ sender: AnyObject) {
+        if notificationSwitch.isOn {
             IAPEngine.sharedInstance.scheduleLocalNotifications()
         } else {
             IAPEngine.sharedInstance.unscheduleLocalNotifications()

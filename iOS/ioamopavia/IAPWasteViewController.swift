@@ -22,7 +22,7 @@ class IAPWasteViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
     }
 
@@ -46,12 +46,12 @@ class IAPWasteViewController: UIViewController {
 
 extension IAPWasteViewController : UITableViewDataSource{
     
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 1
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         var valcount = 0
         for val in selectedWaste["DisposeOptions"].array! {
@@ -65,8 +65,8 @@ extension IAPWasteViewController : UITableViewDataSource{
     }
     
     
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("IAPWasteTableViewCell", forIndexPath: indexPath) as! IAPWasteTableViewCell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "IAPWasteTableViewCell", for: indexPath) as! IAPWasteTableViewCell
         let dispose = selectedWaste["DisposeOptions"][indexPath.row]["disposeOption"].string!
         cell.disposeDescription.text = IAPEngine.sharedInstance.getDisposeData(dispose)
         cell.disposeImage.image = IAPEngine.sharedInstance.getDisposeImageBig(dispose)

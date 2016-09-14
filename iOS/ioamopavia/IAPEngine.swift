@@ -25,11 +25,11 @@ class IAPEngine: NSObject {
     }
     
     
-    func readJson(jsonname: String) -> JSON!{
+    func readJson(_ jsonname: String) -> JSON!{
         
-        if let path = NSBundle.mainBundle().pathForResource(jsonname, ofType: "json") {
+        if let path = Bundle.main.path(forResource: jsonname, ofType: "json") {
             do {
-                let data = try NSData(contentsOfURL: NSURL(fileURLWithPath: path), options: NSDataReadingOptions.DataReadingMappedIfSafe)
+                let data = try Data(contentsOf: URL(fileURLWithPath: path), options: NSData.ReadingOptions.mappedIfSafe)
                 let jsonObj = JSON(data: data)
                 if jsonObj != JSON.null {
                     print("jsonData:\(jsonObj)")
@@ -46,7 +46,7 @@ class IAPEngine: NSObject {
         return nil
     }
     
-    func getDisposeDescritpion(disposeNames: Array<String>) -> String {
+    func getDisposeDescritpion(_ disposeNames: Array<String>) -> String {
         var ret:String = ""
         var counter = 0
         for dispose in disposes["DisposeOption"].array! {
@@ -63,7 +63,7 @@ class IAPEngine: NSObject {
         return ret
     }
     
-    func getDisposeImage(disposeName:String) -> UIImage {
+    func getDisposeImage(_ disposeName:String) -> UIImage {
         switch disposeName {
         case "GLASS":
             return UIImage(named: "vetro")!
@@ -80,7 +80,7 @@ class IAPEngine: NSObject {
         }
     }
     
-    func getDisposeImageBig(disposeName:String) -> UIImage {
+    func getDisposeImageBig(_ disposeName:String) -> UIImage {
         switch disposeName {
         case "GLASS":
             return UIImage(named: "vetroBig")!
@@ -97,19 +97,19 @@ class IAPEngine: NSObject {
         }
     }
     
-    func hexStringToUIColor (hex:String) -> UIColor {
-        var cString:String = hex.stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceAndNewlineCharacterSet() as NSCharacterSet).uppercaseString
+    func hexStringToUIColor (_ hex:String) -> UIColor {
+        var cString:String = hex.trimmingCharacters(in: (NSCharacterSet.whitespacesAndNewlines as NSCharacterSet) as CharacterSet).uppercased()
         
         if (cString.hasPrefix("#")) {
-            cString = cString.substringFromIndex(cString.startIndex.advancedBy(1))
+            cString = cString.substring(from: cString.characters.index(cString.startIndex, offsetBy: 1))
         }
         
         if ((cString.characters.count) != 6) {
-            return UIColor.grayColor()
+            return UIColor.gray
         }
         
         var rgbValue:UInt32 = 0
-        NSScanner(string: cString).scanHexInt(&rgbValue)
+        Scanner(string: cString).scanHexInt32(&rgbValue)
         
         return UIColor(
             red: CGFloat((rgbValue & 0xFF0000) >> 16) / 255.0,
@@ -121,7 +121,7 @@ class IAPEngine: NSObject {
     
     func getHeaderLabel() -> String {
         
-        let dayoftheweek = NSDate().dayOfWeek()!
+        let dayoftheweek = Date().dayOfWeek()!
         
         switch dayoftheweek {
         case 1://Sunday
@@ -144,7 +144,7 @@ class IAPEngine: NSObject {
     }
     
     func getFooterLabel() -> String {
-        let dayoftheweek = NSDate().dayOfWeek()!
+        let dayoftheweek = Date().dayOfWeek()!
         
         switch dayoftheweek {
         case 1://Sunday
@@ -167,7 +167,7 @@ class IAPEngine: NSObject {
     }
     
     func getImageForDay() -> String {
-        let dayoftheweek = NSDate().dayOfWeek()!
+        let dayoftheweek = Date().dayOfWeek()!
         
         switch dayoftheweek {
         case 1://Sunday
@@ -189,7 +189,7 @@ class IAPEngine: NSObject {
         }
     }
     
-    func getReminderTitle(dayoftheweek: NSInteger) -> String {
+    func getReminderTitle(_ dayoftheweek: NSInteger) -> String {
         
         switch dayoftheweek {
         case 1://Sunday
@@ -212,8 +212,8 @@ class IAPEngine: NSObject {
     }
     
     func scheduleLocalNotifications() {
-        NSUserDefaults.standardUserDefaults().setBool(true, forKey: "IAPNotificationEnabled")
-        NSUserDefaults.standardUserDefaults().synchronize()
+        UserDefaults.standard.set(true, forKey: "IAPNotificationEnabled")
+        UserDefaults.standard.synchronize()
 
         for i in 1...4 {
             let fireDate = getDateOfSpecificDay(i)
@@ -224,37 +224,37 @@ class IAPEngine: NSObject {
             notification.alertBody = getReminderTitle(i)
             notification.alertAction = "Open"
             notification.fireDate = fireDate
-            notification.repeatInterval = NSCalendarUnit.Weekday  // Can be used to repeat the notification
+            notification.repeatInterval = NSCalendar.Unit.weekday  // Can be used to repeat the notification
             notification.soundName = UILocalNotificationDefaultSoundName
-            UIApplication.sharedApplication().scheduleLocalNotification(notification)
+            UIApplication.shared.scheduleLocalNotification(notification)
         }
     }
     
     func unscheduleLocalNotifications() {
-        NSUserDefaults.standardUserDefaults().setBool(false, forKey: "IAPNotificationEnabled")
-        NSUserDefaults.standardUserDefaults().synchronize()
-        UIApplication.sharedApplication().cancelAllLocalNotifications()
+        UserDefaults.standard.set(false, forKey: "IAPNotificationEnabled")
+        UserDefaults.standard.synchronize()
+        UIApplication.shared.cancelAllLocalNotifications()
     }
     
-    func getDateOfSpecificDay(day:NSInteger) -> NSDate {/// here day will be 1 or 2.. or 7
+    func getDateOfSpecificDay(_ day:NSInteger) -> Date {/// here day will be 1 or 2.. or 7
         let desiredWeekday = day
-        let weekDateRange = NSCalendar.currentCalendar().maximumRangeOfUnit(NSCalendarUnit.Weekday)
+        let weekDateRange = (Calendar.current as NSCalendar).maximumRange(of: NSCalendar.Unit.weekday)
         let daysInWeek =  weekDateRange.length - weekDateRange.location + 1
         
-        let dateComponents = NSCalendar.currentCalendar().components(NSCalendarUnit.Weekday, fromDate: NSDate())
+        let dateComponents = (Calendar.current as NSCalendar).components(NSCalendar.Unit.weekday, from: Date())
         let currentWeekDay = dateComponents.weekday
-        let differenceDays = (desiredWeekday - currentWeekDay + daysInWeek) % daysInWeek
-        let daysComponents = NSDateComponents()
+        let differenceDays = (desiredWeekday - currentWeekDay! + daysInWeek) % daysInWeek
+        var daysComponents = DateComponents()
         daysComponents.day = differenceDays
         daysComponents.hour = 19
         daysComponents.minute = 0
         daysComponents.second = 0
         
-        let resultDate = NSCalendar.currentCalendar().dateByAddingComponents(daysComponents, toDate: NSDate(), options: NSCalendarOptions.MatchFirst)
+        let resultDate = (Calendar.current as NSCalendar).date(byAdding: daysComponents, to: Date(), options: NSCalendar.Options.matchFirst)
         return resultDate!
     }
     
-    func getDisposeData(disposeName:String) -> String {
+    func getDisposeData(_ disposeName:String) -> String {
         for dispose in disposes["DisposeOption"].array! {
             if disposeName == dispose["Name"].string{
                 let ret = dispose["Description"].string! + "\n" + dispose["Container"].string! + "\n" + dispose["Procedure"].string!
@@ -265,11 +265,11 @@ class IAPEngine: NSObject {
     }
 }
 
-extension NSDate {
+extension Date {
     func dayOfWeek() -> Int? {
         if
-            let cal: NSCalendar = NSCalendar.currentCalendar(),
-            let comp: NSDateComponents = cal.components(.Weekday, fromDate: self) {
+            let cal: Calendar = Calendar.current,
+            let comp: DateComponents = (cal as NSCalendar).components(.weekday, from: self) {
             return comp.weekday
         } else {
             return nil
