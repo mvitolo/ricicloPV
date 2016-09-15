@@ -3,22 +3,26 @@
               android:orientation="horizontal"
               android:layout_width="match_parent"
               android:layout_height="match_parent"
+                android:padding="@dimen/common_padding"
     >
-
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_delete_black_24dp"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:paddingRight="@dimen/common_padding"
+        android:id="@+id/img_waste_type"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/txt_waste_name"
+        android:layout_toLeftOf="@id/img_waste_type"
         android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_alignParentLeft="true"
         android:text="Title"
         android:layout_centerVertical="true"
         />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/txt_waste_name"
-        android:layout_alignBaseline="@id/txt_waste_name"
-        android:src="@drawable/ic_delete_black_24dp"
-        android:id="@+id/img_waste_type"/>
+
 
 </RelativeLayout>

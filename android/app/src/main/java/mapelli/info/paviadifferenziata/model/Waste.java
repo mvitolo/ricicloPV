@@ -15,7 +15,16 @@ public class Waste {
     }
 
     public enum DisposeOption {
-        GENERIC
+        GENERIC,
+        LANDFILL,
+        AUTHORIZED_DEALERS,
+        PAPER,
+        PLASTIC,
+        HUMID,
+        GLASS,
+        LARGE,
+        GREEN,
+        CLOTHES;
     }
 
 

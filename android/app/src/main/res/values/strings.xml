@@ -1,6 +1,8 @@
 <resources>
-    <string name="app_name">PaviaDifferenziata</string>
+    <string name="app_name">Riciclo PV</string>
     <string name="action_settings">Settings</string>
     <string name="search_title">Cerca</string>
     <string name="search_hint">Cosa vuoi buttare?</string>
+    <string name="today_waste">Oggi si butta non so cosa</string>
+    <string name="today_waste_no_recycle">Stasera puoi rilassarti, non c\'e\' nulla da buttare</string>
 </resources>
