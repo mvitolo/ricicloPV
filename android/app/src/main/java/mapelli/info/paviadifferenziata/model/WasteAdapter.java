@@ -97,7 +97,7 @@ public class WasteAdapter extends ArrayAdapter implements Filterable {
 
     private Drawable getWasteImage(Waste.DisposeOption t){
 
-        int resId = R.drawable.ic_delete_black_24dp;
+        int resId = R.drawable.ic_delete_48dp;
 
         switch (t) {
             case PAPER:
