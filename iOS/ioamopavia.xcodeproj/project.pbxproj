@@ -26,7 +26,6 @@
 		ABE666561D87E4970029AE3E /* IAPWasteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE666551D87E4970029AE3E /* IAPWasteViewController.swift */; };
 		ABE666581D87FCAD0029AE3E /* IAPWasteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABE666571D87FCAD0029AE3E /* IAPWasteTableViewCell.swift */; };
 		ABFD66A41D858D0C00F9C319 /* IAPSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ABFD66A31D858D0C00F9C319 /* IAPSettingsViewController.swift */; };
-		ADE4788B71866DC4BAFE54D4 /* Pods_ioamopavia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1C03D0421E68301B654AEBB /* Pods_ioamopavia.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +44,18 @@
 			remoteInfo = ioamopavia;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AB97FB811D9168F3009ED88F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 7;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		73DB1EE6306A8F97FD547FC1 /* Pods-ioamopavia.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ioamopavia.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ioamopavia/Pods-ioamopavia.debug.xcconfig"; sourceTree = "<group>"; };
@@ -84,7 +95,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ADE4788B71866DC4BAFE54D4 /* Pods_ioamopavia.framework in Frameworks */,
 				344C34AEF4CB31A46BB4642D /* Pods_RicicloPV.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -204,6 +214,7 @@
 				36767FED483CCD98574328C1 /* 📦 Embed Pods Frameworks */,
 				BE2C89160BB69B0E9B238364 /* 📦 Copy Pods Resources */,
 				AB8A4D861D735CCE004305DD /* ShellScript */,
+				AB97FB811D9168F3009ED88F /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -500,6 +511,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -541,6 +553,7 @@
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 3.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 			};

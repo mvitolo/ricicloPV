@@ -118,10 +118,10 @@ class IAPEngine: NSObject {
             alpha: CGFloat(1.0)
         )
     }
-    
-    func getHeaderLabel() -> String {
-        
-        let dayoftheweek = Date().dayOfWeek()!
+    func getHeaderLabel(_ dayoftheweek: NSInteger, _ cityZone: NSInteger) ->String {
+        return getHeaderLabel(getDayForZone(dayoftheweek, cityZone))
+    }
+    func getHeaderLabel(_ dayoftheweek: NSInteger) -> String {
         
         switch dayoftheweek {
         case 1://Sunday
@@ -142,9 +142,10 @@ class IAPEngine: NSObject {
             return ""
         }
     }
-    
-    func getFooterLabel() -> String {
-        let dayoftheweek = Date().dayOfWeek()!
+    func getFooterLabel(_ dayoftheweek: NSInteger, _ cityZone: NSInteger) ->String {
+        return getFooterLabel(getDayForZone(dayoftheweek, cityZone))
+    }
+    func getFooterLabel(_ dayoftheweek: NSInteger) -> String {
         
         switch dayoftheweek {
         case 1://Sunday
@@ -166,8 +167,10 @@ class IAPEngine: NSObject {
         }
     }
     
-    func getImageForDay() -> String {
-        let dayoftheweek = Date().dayOfWeek()!
+    func getImageForDay(_ dayoftheweek: NSInteger, _ cityZone: NSInteger) ->String {
+        return getImageForDay(getDayForZone(dayoftheweek, cityZone))
+    }
+    func getImageForDay(_ dayoftheweek: NSInteger) -> String {
         
         switch dayoftheweek {
         case 1://Sunday
@@ -187,6 +190,24 @@ class IAPEngine: NSObject {
         default:
             return "smiley"
         }
+    }
+    
+    func getDayForZone(_ dayoftheweek: NSInteger, _ cityZone: NSInteger) -> NSInteger {
+        
+        if cityZone == 0 {//downtown
+            return dayoftheweek
+        } else if cityZone == 1 {//suburbs
+            if dayoftheweek == 1 {
+                return 7
+            } else {
+                return (dayoftheweek - 1)
+            }
+        }
+        return dayoftheweek
+    }
+    
+    func getReminderTitle(_ dayoftheweek: NSInteger, _ cityZone: NSInteger) -> String {
+        return getReminderTitle(getDayForZone(dayoftheweek, cityZone))
     }
     
     func getReminderTitle(_ dayoftheweek: NSInteger) -> String {
