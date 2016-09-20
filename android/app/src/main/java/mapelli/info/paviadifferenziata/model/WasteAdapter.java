@@ -73,7 +73,9 @@ public class WasteAdapter extends ArrayAdapter implements Filterable {
 
         Waste w = (Waste) getItem(position);
         txt.setText(Utils.capitalize(w.getName()));
-        img.setImageDrawable(getWasteImage(w.getDisposeOptions().get(0)));
+        if (w.getDisposeOptions().size() > 0) {
+            img.setImageDrawable(getWasteImage(w.getDisposeOptions().get(0)));
+        }
 
 
         return convertView;
@@ -94,8 +96,29 @@ public class WasteAdapter extends ArrayAdapter implements Filterable {
     }
 
     private Drawable getWasteImage(Waste.DisposeOption t){
-        return ResourcesCompat.getDrawable(getContext().getResources(), R.drawable
-                .ic_delete_black_24dp, null);
+
+        int resId = R.drawable.ic_delete_48dp;
+
+        switch (t) {
+            case PAPER:
+                resId = R.drawable.carta;
+                break;
+            case HUMID:
+                resId = R.drawable.umido;
+                break;
+            case PLASTIC:
+                resId = R.drawable.plastica;
+                break;
+            case GLASS:
+                resId = R.drawable.vetro;
+                break;
+            case GENERIC:
+                resId = R.drawable.secco;
+                break;
+
+        }
+
+        return ResourcesCompat.getDrawable(getContext().getResources(), resId, null);
     }
 
     @Override

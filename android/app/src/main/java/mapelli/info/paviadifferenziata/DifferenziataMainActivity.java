@@ -9,6 +9,7 @@ import android.support.annotation.NonNull;
 import android.support.design.widget.BottomSheetBehavior;
 import android.support.design.widget.CoordinatorLayout;
 import android.support.design.widget.FloatingActionButton;
+import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.SearchView;
 import android.support.v7.widget.Toolbar;
@@ -21,14 +22,18 @@ import android.view.animation.AnimationUtils;
 import android.widget.ListView;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.List;
 
 import mapelli.info.paviadifferenziata.model.Waste;
 import mapelli.info.paviadifferenziata.model.WasteAdapter;
+import mapelli.info.paviadifferenziata.view.TodayWasteFragment;
 
 public class DifferenziataMainActivity extends AppCompatActivity {
 
@@ -50,10 +55,20 @@ public class DifferenziataMainActivity extends AppCompatActivity {
         shrinkAnimation = AnimationUtils.loadAnimation(this, R.anim.simple_shrink);
 
         setupFab();
+        setupEmptyView();
         //setupBottomSheet();
         initListView();
         handleIntent(getIntent());
 
+
+
+    }
+
+    private void setupEmptyView() {
+
+        Fragment todayWaste = new TodayWasteFragment();
+
+        getSupportFragmentManager().beginTransaction().add(R.id.main_content_container,todayWaste).commit();
 
 
     }
@@ -189,16 +204,56 @@ public class DifferenziataMainActivity extends AppCompatActivity {
             String name = "";
             ArrayList<String[]> data = new ArrayList<String[]>();
             for (int i = 0; i < jsonArray.length(); i++) {
-                name = jsonArray.getJSONObject(i).getString("Name");
-
+                JSONObject wasteJson = jsonArray.getJSONObject(i);
+                name = wasteJson.getString("Name");
+                final List<Waste.DisposeOption> disposeOptions = getDisposeOptions(wasteJson);
                 Log.v("name", name);
-               adapter.add(new Waste(name, Waste.DisposeOption.GENERIC));
-                adapter.notifyDataSetChanged();
+                final String finalName = name;
+                runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        adapter.add(new Waste(finalName, disposeOptions));
+                        adapter.notifyDataSetChanged();
+                    }
+                });
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
         return true;
+    }
+
+    private List<Waste.DisposeOption> getDisposeOptions(JSONObject wasteJson) {
+
+        List<Waste.DisposeOption> disposeOptions = new ArrayList<>();
+
+        try {
+            JSONArray array = wasteJson.getJSONArray("DisposeOptions");
+
+            for (int i = 0; i < array.length() ; i++){
+                JSONObject o = array.getJSONObject(i);
+                try {
+                    String disposeOptionString = o.getString("disposeOption");
+                    if (disposeOptionString != null && disposeOptionString.length() > 0) {
+                        Waste.DisposeOption disposeOption = Waste.DisposeOption.valueOf(disposeOptionString);
+                        if (disposeOption != null) {
+                            disposeOptions.add(disposeOption);
+                        }
+                    }
+                } catch (Exception e) {
+                    // todo handling
+                    e.printStackTrace();
+                }
+            }
+
+
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
+
+
+        return disposeOptions;
     }
 
     @Override
@@ -240,9 +295,13 @@ public class DifferenziataMainActivity extends AppCompatActivity {
 
     private void searchString(String s) {
         Log.d(TAG, "search for " + s);
-        getListAdapter().getFilter().filter("", null);
         getListAdapter().getFilter().filter(s, null);
         getListAdapter().notifyDataSetChanged();
+        if (s.isEmpty()) {
+            findViewById(R.id.listView).setVisibility(View.GONE);
+        } else {
+            findViewById(R.id.listView).setVisibility(View.VISIBLE);
+        }
 
     }
 
