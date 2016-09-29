@@ -1,5 +1,5 @@
 # ricicloPV
-This is a little search app we did for searching were to dispose a specific waste for the Pavia.
+This is a little search app to browse through the disposal instructions for the city of Pavia.
 
 The Android app was done by Franceco Mapelli @francescomapelli https://github.com/francescomapelli
 
