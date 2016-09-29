@@ -18,8 +18,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UISplitViewControllerDele
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         Fabric.with([Crashlytics.self])
         if UserDefaults.standard.object(forKey: "IAPNotificationEnabled") == nil {
-            IAPEngine.sharedInstance.scheduleLocalNotifications()
+            //IAPEngine.sharedInstance.scheduleLocalNotifications()
         }
+        
+        UserDefaults.standard.set(0, forKey: "IAPHomeZone")
+        
         
         return true
     }
